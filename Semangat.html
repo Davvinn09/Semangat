@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semangat Buat Kiyaa 🤎</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #5c3b1e, #8b5e34, #c19a6b);
+      overflow:hidden;
+    }
+
+    .container{
+      width:90%;
+      max-width:420px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      border-radius:25px;
+      padding:30px;
+      text-align:center;
+      color:white;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      animation:muncul 1s ease;
+    }
+
+    @keyframes muncul{
+      from{
+        transform:scale(0.8);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    h1{
+      font-size:32px;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:17px;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      padding:12px 24px;
+      border:none;
+      border-radius:15px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+      margin:10px;
+      font-weight:bold;
+    }
+
+    .yes{
+      background:#4b2e1e;
+      color:white;
+    }
+
+    .yes:hover{
+      transform:scale(1.1);
+      background:#3a2215;
+    }
+
+    .no{
+      background:#d2b48c;
+      color:#3a2215;
+      position:absolute;
+    }
+
+    .message{
+      display:none;
+      animation:fade 1s ease;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .heart{
+      font-size:40px;
+      animation:love 1s infinite alternate;
+      margin-bottom:10px;
+    }
+
+    @keyframes love{
+      from{
+        transform:scale(1);
+      }
+      to{
+        transform:scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="awal">
+      <h1>Hai Kiyaa 🤎</h1>
+      <p>
+        Jangan sedih terus yaa...<br>
+        Aku punya sesuatu buat kamu ✨
+      </p>
+
+      <button class="btn yes" onclick="semangat()">Aku Semangat 🤎</button>
+      <button class="btn no" id="noBtn">Enggak 😔</button>
+    </div>
+
+    <div class="message" id="message">
+      <div class="heart">🤎</div>
+
+      <h1>Semangat Ya Kiyaa!</h1>
+
+      <p>
+        Kiyaa harus percaya kalau kamu itu kuat banget.<br><br>
+
+        Semua hal yang lagi bikin capek sekarang,
+        suatu hari bakal jadi alasan kenapa kamu jadi lebih hebat ✨<br><br>
+
+        Jangan ngerasa sendiri yaa,
+        kamu itu berharga,
+        kamu keren,
+        dan kamu pantas buat bahagia 🤎<br><br>
+
+        Kalau hari ini berat,
+        gapapa pelan-pelan aja,
+        yang penting jangan menyerah yaa 🌷
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    function semangat(){
+      document.getElementById("awal").style.display = "none";
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
